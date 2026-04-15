@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>RoverCare Australia | NDIS & Disability Support Services</title>
+  <!-- Google Fonts + simple reset -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #FEFCF5;
+      color: #1E2A2F;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* header & nav */
+    .navbar {
+      background: #FFFFFF;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02), 0 2px 6px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(2px);
+    }
+
+    .nav-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+      flex-wrap: wrap;
+    }
+
+    .logo h1 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #006B4C, #00A36C);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      letter-spacing: -0.3px;
+    }
+
+    .logo span {
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: #5B6E5C;
+      display: block;
+      letter-spacing: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #2D3E3F;
+      transition: 0.2s;
+      font-size: 1rem;
+    }
+
+    .nav-links a:hover {
+      color: #006B4C;
+    }
+
+    .btn-outline {
+      border: 2px solid #006B4C;
+      background: transparent;
+      padding: 8px 22px;
+      border-radius: 40px;
+      font-weight: 700;
+      color: #006B4C;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .btn-outline:hover {
+      background: #006B4C;
+      color: white;
+    }
+
+    /* hero */
+    .hero {
+      background: linear-gradient(110deg, #EFFAF5 0%, #FFFFFF 100%);
+      padding: 70px 0 80px;
+    }
+
+    .hero-grid {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 3rem;
+    }
+
+    .hero-text {
+      flex: 1;
+    }
+
+    .hero-badge {
+      background: #D9F0E8;
+      display: inline-block;
+      padding: 6px 16px;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #006B4C;
+      margin-bottom: 20px;
+    }
+
+    .hero-text h1 {
+      font-size: 3.3rem;
+      font-weight: 800;
+      line-height: 1.2;
+      color: #1A3A32;
+      margin-bottom: 20px;
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      color: #3C5A5A;
+      max-width: 550px;
+      margin-bottom: 32px;
+    }
+
+    .btn-primary {
+      background: #006B4C;
+      border: none;
+      padding: 14px 36px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1rem;
+      color: white;
+      cursor: pointer;
+      transition: 0.2s;
+      box-shadow: 0 4px 8px rgba(0,107,76,0.2);
+    }
+
+    .btn-primary:hover {
+      background: #004d36;
+      transform: translateY(-2px);
+    }
+
+    .hero-image {
+      flex: 1;
+      text-align: center;
+    }
+
+    .hero-image img {
+      max-width: 100%;
+      border-radius: 32px;
+      box-shadow: 0 25px 40px -12px rgba(0,0,0,0.2);
+    }
+
+    /* services section */
+    .services {
+      padding: 80px 0;
+      background: #FFFFFF;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.3rem;
+      font-weight: 800;
+      color: #1E2A2F;
+      margin-bottom: 14px;
+    }
+
+    .section-sub {
+      text-align: center;
+      color: #5E7A6E;
+      max-width: 680px;
+      margin: 0 auto 48px;
+      font-size: 1.1rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 32px;
+    }
+
+    .service-card {
+      background: #FEFCF7;
+      border-radius: 28px;
+      padding: 32px 24px;
+      transition: all 0.25s ease;
+      border: 1px solid #E9EFE9;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.02);
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      border-color: #CBE5DA;
+      box-shadow: 0 20px 30px -12px rgba(0, 107, 76, 0.12);
+    }
+
+    .service-icon {
+      font-size: 2.5rem;
+      background: #E1F3EC;
+      width: 64px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 20px;
+      margin-bottom: 24px;
+      color: #006B4C;
+    }
+
+    .service-card h3 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: #1C3B35;
+    }
+
+    .service-card p {
+      color: #3F5A56;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .service-tag {
+      font-size: 0.85rem;
+      background: #F0F5F2;
+      display: inline-block;
+      padding: 5px 14px;
+      border-radius: 30px;
+      font-weight: 500;
+      color: #006B4C;
+    }
+
+    /* feature / about australia */
+    .australia-commit {
+      background: #F5F9F6;
+      padding: 70px 0;
+    }
+
+    .flex-feature {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .feature-text {
+      flex: 1;
+    }
+
+    .feature-text h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #1C3B35;
+    }
+
+    .feature-text ul {
+      list-style: none;
+      margin-top: 24px;
+    }
+
+    .feature-text li {
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1rem;
+      color: #2C524A;
+    }
+
+    .feature-text li i {
+      color: #006B4C;
+      font-size: 1.2rem;
+      width: 24px;
+    }
+
+    .feature-img {
+      flex: 1;
+      background: #D9E8E2;
+      border-radius: 32px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .feature-img i {
+      font-size: 8rem;
+      color: #006B4C;
+      opacity: 0.8;
+    }
+
+    /* contact / cta */
+    .cta {
+      background: linear-gradient(120deg, #004d36, #006B4C);
+      padding: 60px 0;
+      text-align: center;
+      color: white;
+    }
+
+    .cta h2 {
+      font-size: 2.2rem;
+      margin-bottom: 16px;
+    }
+
+    .cta p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 28px;
+      opacity: 0.9;
+    }
+
+    .btn-white {
+      background: white;
+      border: none;
+      padding: 14px 38px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1rem;
+      color: #006B4C;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .btn-white:hover {
+      background: #F0F7F3;
+      transform: scale(1.02);
+    }
+
+    /* footer */
+    footer {
+      background: #0F2C26;
+      color: #CDE5DE;
+      padding: 48px 0 24px;
+    }
+
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .footer-col h4 {
+      color: white;
+      margin-bottom: 18px;
+      font-weight: 600;
+    }
+
+    .footer-col p, .footer-col a {
+      color: #BDD9D2;
+      text-decoration: none;
+      line-height: 1.6;
+    }
+
+    .footer-col a:hover {
+      color: white;
+    }
+
+    .copyright {
+      border-top: 1px solid #2D554B;
+      padding-top: 24px;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    /* modal (contact popup simple) */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      background: white;
+      max-width: 460px;
+      width: 90%;
+      border-radius: 32px;
+      padding: 32px;
+      position: relative;
+      animation: fadeInUp 0.2s ease;
+    }
+
+    @keyframes fadeInUp {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .modal-content h3 {
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+      color: #1C3B35;
+    }
+
+    .modal-content input, .modal-content textarea {
+      width: 100%;
+      padding: 12px 16px;
+      margin: 12px 0;
+      border: 1px solid #D0DDD4;
+      border-radius: 28px;
+      font-family: inherit;
+    }
+
+    .modal-content button {
+      background: #006B4C;
+      color: white;
+      border: none;
+      padding: 12px;
+      width: 100%;
+      border-radius: 40px;
+      font-weight: bold;
+      margin-top: 8px;
+      cursor: pointer;
+    }
+
+    .close-modal {
+      position: absolute;
+      right: 22px;
+      top: 18px;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: #8FAAA2;
+    }
+
+    @media (max-width: 800px) {
+      .nav-flex {
+        flex-direction: column;
+        gap: 16px;
+      }
+      .hero-text h1 {
+        font-size: 2.4rem;
+      }
+      .section-title {
+        font-size: 1.9rem;
+      }
+      .container {
+        padding: 0 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container nav-flex">
+      <div class="logo">
+        <h1>RoverCare <span>NDIS | Australia</span></h1>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about-au">Why Us</a></li>
+        <li><a href="#contact" id="contactNavBtn">Contact</a></li>
+      </ul>
+      <button class="btn-outline" id="enquireBtn">Enquire now</button>
+    </div>
+  </nav>
+
+  <!-- Hero / home section -->
+  <section id="home">
+    <div class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <div class="hero-badge"><i class="fas fa-hands-helping"></i> Registered NDIS Provider</div>
+          <h1>Support that feels like home <br> — across Australia</h1>
+          <p>Reliable, compassionate assistance for household tasks, social support, life skills, community connection, and safe transport. Empowering your independence.</p>
+          <button class="btn-primary" id="heroCtaBtn">Get started today →</button>
+        </div>
+        <div class="hero-image">
+          <div style="background: #DCF2EA; border-radius: 32px; padding: 20px;">
+            <i class="fas fa-hands-helping" style="font-size: 7rem; color:#006B4C;"></i>
+            <i class="fas fa-people-arrows" style="font-size: 5rem; margin:0 10px; color:#2B7A62;"></i>
+            <i class="fas fa-car-side" style="font-size: 5rem; color:#2B7A62;"></i>
+            <p style="margin-top: 20px; font-weight:500;">🇦🇺 Supporting participants in VIC, NSW, QLD, WA, SA & ACT</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services section (5 core services) with integrated detailed descriptions -->
+  <section id="services">
+    <div class="services">
+      <div class="container">
+        <div class="section-title">Our support services</div>
+        <div class="section-sub">Tailored, person-centred disability & lifestyle assistance — designed for real independence.</div>
+        <div class="services-grid">
+          <!-- 1 Household Tasks - detailed -->
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-broom"></i></div>
+            <h3>Household Tasks</h3>
+            <p><strong>Providing reliable support with household chores, promoting a comfortable living environment.</strong> From cleaning, laundry, meal preparation to gardening and home organisation — we help keep your home running smoothly, safely, and hygienically so you can focus on what matters most.</p>
+            <span class="service-tag"><i class="fas fa-check-circle"></i> NDIS core support</span>
+          </div>
+          <!-- 2 Social Support - expanded -->
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-heart"></i></div>
+            <h3>Social Support</h3>
+            <p><strong>Facilitating meaningful social connections and community engagement</strong> through guided interaction, recreational outings, and relationship-building activities. We enhance emotional wellbeing, reduce isolation, and promote a genuine sense of belonging — whether it's coffee catch-ups, attending appointments, or joining local groups.</p>
+            <span class="service-tag"><i class="fas fa-users"></i> Community participation</span>
+          </div>
+          <!-- 3 Development Life Skills - fully detailed -->
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-chalkboard-user"></i></div>
+            <h3>Life Skills Development</h3>
+            <p><strong>Equipping individuals with essential life skills to thrive and achieve their full potential.</strong> We provide practical, hands-on training in budgeting, cooking, public transport navigation, communication, time management, and digital literacy — building confidence and independence for everyday success.</p>
+            <span class="service-tag"><i class="fas fa-lightbulb"></i> Capacity building</span>
+          </div>
+          <!-- 4 Innovative Community Participation - integrated detailed version -->
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-palette"></i></div>
+            <h3>Innovative Community Participation</h3>
+            <p><strong>Engaging individuals in creative and meaningful community activities for a fulfilling lifestyle.</strong> From workshops, volunteer opportunities, cultural events, and recreational programs — we connect you with local art classes, nature excursions, sports groups, and community projects that align with your interests and goals.</p>
+            <span class="service-tag"><i class="fas fa-tree"></i> Social & recreation</span>
+          </div>
+          <!-- 5 Assist Travel / Transport - detailed full version -->
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-van-shuttle"></i></div>
+            <h3>Travel & Transport Assistance</h3>
+            <p><strong>Delivering safe, timely, and reliable transportation services tailored to individual needs, including accompaniment and route planning.</strong> We empower participants to access healthcare, education, employment, social events, and other desired opportunities with dignity and ease — door-to-door support, vehicle modifications, and travel training available.</p>
+            <span class="service-tag"><i class="fas fa-road"></i> Transport & mobility</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Australia dedicated section + NDIS standards -->
+  <section id="about-au">
+    <div class="australia-commit">
+      <div class="container flex-feature">
+        <div class="feature-text">
+          <h2><i class="fas fa-leaf"></i> NDIS registered & Australia-wide</h2>
+          <p>We are a proud Australian disability service provider aligned with the NDIS Practice Standards and Quality Framework. Our team brings local knowledge, cultural safety, and a genuine commitment to regional & metro communities — including our home base in Perth, Western Australia.</p>
+          <ul>
+            <li><i class="fas fa-check-circle"></i> Fully insured & police-checked support workers</li>
+            <li><i class="fas fa-clock"></i> Flexible scheduling — 24/7 availability across all states</li>
+            <li><i class="fas fa-hand-holding-heart"></i> Person-centred, choice & control approach</li>
+            <li><i class="fas fa-language"></i> Multilingual team & LGBTQIA+ friendly</li>
+          </ul>
+        </div>
+        <div class="feature-img">
+          <i class="fas fa-map-marked-alt"></i>
+          <p style="margin-top: 24px; font-weight:600;">Proudly serving from Perth, WA — supporting participants across Australia.</p>
+          <div style="margin-top: 20px; font-size: 2rem;">
+            <i class="fas fa-wheelchair"></i> <i class="fas fa-hands"></i> <i class="fas fa-bus"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- extra reference: trust and experience -->
+  <div style="background: #FFFFFF; padding: 40px 0; text-align: center; border-bottom: 1px solid #e2efe9;">
+    <div class="container">
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px;">
+        <div><i class="fas fa-star-of-life" style="color:#006B4C; font-size: 2rem;"></i><br><strong>5+ years</strong><br>excellence in care</div>
+        <div><i class="fas fa-smile" style="color:#006B4C; font-size: 2rem;"></i><br><strong>98%</strong><br>client satisfaction</div>
+        <div><i class="fas fa-austral-sign" style="color:#006B4C; font-size: 2rem;"></i><br><strong>NDIS</strong><br>registered provider</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Call to action with new contact details -->
+  <div class="cta" id="contact">
+    <div class="container">
+      <h2>Ready to start your support journey?</h2>
+      <p>Talk to our friendly local team about household assistance, life skills, transport, or community activities. Based in Perth, WA, we're here for you across Australia.</p>
+      <button class="btn-white" id="ctaModalBtn">Request a free consultation</button>
+    </div>
+  </div>
+
+  <!-- footer with updated address, phone, email -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>RoverCare Australia</h4>
+          <p>NDIS provider delivering holistic support across household tasks, social connection, life skills, community participation and transport. Creating opportunities for every Australian.</p>
+          <p style="margin-top: 12px;"><strong>Perth Office</strong><br>
+          24 Vimeira Way, Ellenbrook WA 6069<br>
+          Perth, Western Australia</p>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p><i class="fas fa-phone-alt"></i> 61 491 955 093<br>
+          <i class="fas fa-envelope"></i> Admin@rovercare.com.au<br>
+          <i class="fas fa-location-dot"></i> 24 Vimeira Way, Ellenbrook WA 6069</p>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <p><a href="#">NDIS Support Catalogue</a><br><a href="#">Plan Management</a><br><a href="#">Privacy Policy</a></p>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>© 2025 RoverCare Australia — Culturally inclusive, trusted disability services. We acknowledge the Traditional Owners of country throughout Australia, and pay our respect to Elders past and present. <strong>Perth, WA | 24 Vimeira Way, Ellenbrook WA 6069</strong></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal (contact form simulation) with updated contact info in context -->
+  <div id="contactModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h3>Get in touch</h3>
+      <p>We'll respond within 24hrs (AWST) — based in Perth, WA.</p>
+      <input type="text" placeholder="Full name" id="modalName">
+      <input type="email" placeholder="Email address" id="modalEmail">
+      <input type="tel" placeholder="Phone (optional)">
+      <textarea rows="2" placeholder="Which service interests you? (Household / Social Support / Life Skills / Community Participation / Travel Assistance)"></textarea>
+      <button id="submitModalBtn">Send enquiry →</button>
+      <small style="display:block; margin-top:12px;">We respect your privacy. NDIS info handled with care. You can also call us at 61 491 955 093 or email Admin@rovercare.com.au</small>
+    </div>
+  </div>
+
+  <script>
+    // MODAL functionality
+    const modal = document.getElementById('contactModal');
+    const openModalBtns = [document.getElementById('enquireBtn'), document.getElementById('heroCtaBtn'), document.getElementById('ctaModalBtn'), document.getElementById('contactNavBtn')];
+    const closeModalSpan = document.querySelector('.close-modal');
+    
+    function openModal() {
+      modal.style.display = 'flex';
+    }
+    function closeModal() {
+      modal.style.display = 'none';
+    }
+    
+    openModalBtns.forEach(btn => {
+      if(btn) btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        openModal();
+      });
+    });
+    
+    if(closeModalSpan) closeModalSpan.addEventListener('click', closeModal);
+    window.addEventListener('click', (e) => {
+      if(e.target === modal) closeModal();
+    });
+    
+    // Submit modal with updated service wording and contact reference
+    const submitBtn = document.getElementById('submitModalBtn');
+    if(submitBtn) {
+      submitBtn.addEventListener('click', () => {
+        const nameInput = document.getElementById('modalName');
+        const emailInput = document.getElementById('modalEmail');
+        if(nameInput.value.trim() === '' || emailInput.value.trim() === '') {
+          alert('Please provide your name and email so we can assist you with NDIS services.');
+        } else {
+          alert(`Thank you ${nameInput.value.trim()}! One of our support coordinators from RoverCare Australia (Perth office) will reach out soon regarding Household Tasks, Social Support, Life Skills Development, Innovative Community Participation or Travel Assistance. You can also call us at 61 491 955 093 or email Admin@rovercare.com.au.`);
+          closeModal();
+          nameInput.value = '';
+          emailInput.value = '';
+        }
+      });
+    }
+    
+    // smooth scroll for navigation links
+    document.querySelectorAll('.nav-links a, .btn-outline, .btn-primary, .btn-white').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if(href && href.startsWith('#')) {
+          e.preventDefault();
+          const targetId = href.substring(1);
+          const targetElement = document.getElementById(targetId);
+          if(targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          } else if (targetId === 'contact' && document.getElementById('contact')) {
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      });
+    });
+    
+    // specific for enquire & contactNavBtn
+    const extraEnquire = document.getElementById('enquireBtn');
+    if(extraEnquire) {
+      extraEnquire.addEventListener('click', (e) => {
+        e.preventDefault();
+        openModal();
+      });
+    }
+    const navContact = document.getElementById('contactNavBtn');
+    if(navContact) {
+      navContact.addEventListener('click', (e) => {
+        e.preventDefault();
+        const contactSection = document.getElementById('contact');
+        if(contactSection) contactSection.scrollIntoView({ behavior: 'smooth' });
+        else openModal();
+      });
+    }
+    const heroBtn = document.getElementById('heroCtaBtn');
+    if(heroBtn) heroBtn.addEventListener('click', (e) => { e.preventDefault(); openModal(); });
+    const ctaBtn = document.getElementById('ctaModalBtn');
+    if(ctaBtn) ctaBtn.addEventListener('click', (e) => { e.preventDefault(); openModal(); });
+    
+    console.log("RoverCare AU — NDIS services ready | Contact: 24 Vimeira Way, Ellenbrook WA 6069 | 61 491 955 093 | Admin@rovercare.com.au");
+  </script>
+</body>
+</html>
