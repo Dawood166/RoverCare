@@ -3,11 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>RoverCare Australia | NDIS & Disability Support Services</title>
-  <!-- Google Fonts + simple reset -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <title>RoverCare Australia | Professional NDIS Support Perth WA</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
+    :root {
+      --primary: #2C6E9E;
+      --primary-dark: #1E4F73;
+      --primary-light: #E8F0F7;
+      --accent: #F4A261;
+      --accent-dark: #E76F51;
+      --secondary: #2A9D8F;
+      --secondary-dark: #21867A;
+      --whatsapp: #25D366;
+      --whatsapp-dark: #128C7E;
+      --email-bg: #2C6E9E;
+      --neutral-100: #FFFFFF;
+      --neutral-200: #F8FAFC;
+      --neutral-300: #E2E8F0;
+      --neutral-400: #CBD5E1;
+      --neutral-600: #64748B;
+      --neutral-700: #475569;
+      --neutral-800: #1E293B;
+      --neutral-900: #0F172A;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.04);
+      --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.08), 0 8px 10px -6px rgb(0 0 0 / 0.02);
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-xl: 32px;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -16,8 +45,8 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #FEFCF5;
-      color: #1E2A2F;
+      background-color: var(--neutral-200);
+      color: var(--neutral-800);
       line-height: 1.5;
       scroll-behavior: smooth;
     }
@@ -28,40 +57,64 @@
       padding: 0 32px;
     }
 
-    /* header & nav */
+    h1, h2, h3 {
+      letter-spacing: -0.02em;
+    }
+
+    /* Navigation - Larger Logo */
     .navbar {
-      background: #FFFFFF;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02), 0 2px 6px rgba(0, 0, 0, 0.05);
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(12px);
       position: sticky;
       top: 0;
-      z-index: 100;
-      backdrop-filter: blur(2px);
+      z-index: 1000;
+      border-bottom: 1px solid var(--neutral-300);
     }
 
     .nav-flex {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 18px 0;
+      padding: 16px 0;
       flex-wrap: wrap;
+      gap: 20px;
     }
 
-    .logo h1 {
-      font-size: 1.8rem;
-      font-weight: 800;
-      background: linear-gradient(135deg, #006B4C, #00A36C);
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .logo-icon {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-icon img {
+      width: 100%;
+      height: auto;
+      max-width: 60px;
+      max-height: 60px;
+      object-fit: contain;
+    }
+
+    .logo-text h1 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--primary-dark), var(--secondary-dark));
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
-      letter-spacing: -0.3px;
     }
 
-    .logo span {
-      font-size: 0.9rem;
-      font-weight: 400;
-      color: #5B6E5C;
-      display: block;
-      letter-spacing: 0;
+    .logo-text span {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--neutral-600);
     }
 
     .nav-links {
@@ -72,43 +125,46 @@
 
     .nav-links a {
       text-decoration: none;
-      font-weight: 600;
-      color: #2D3E3F;
+      font-weight: 500;
+      color: var(--neutral-700);
       transition: 0.2s;
-      font-size: 1rem;
+      font-size: 0.95rem;
     }
 
     .nav-links a:hover {
-      color: #006B4C;
+      color: var(--primary);
     }
 
     .btn-outline {
-      border: 2px solid #006B4C;
+      border: 1.5px solid var(--primary);
       background: transparent;
-      padding: 8px 22px;
+      padding: 8px 24px;
       border-radius: 40px;
-      font-weight: 700;
-      color: #006B4C;
+      font-weight: 600;
+      color: var(--primary);
       cursor: pointer;
-      transition: 0.2s;
+      transition: all 0.2s;
+      font-size: 0.9rem;
     }
 
     .btn-outline:hover {
-      background: #006B4C;
+      background: var(--primary);
       color: white;
     }
 
-    /* hero */
+    /* Hero Section */
     .hero {
-      background: linear-gradient(110deg, #EFFAF5 0%, #FFFFFF 100%);
-      padding: 70px 0 80px;
+      background: linear-gradient(135deg, var(--neutral-100) 0%, var(--neutral-200) 100%);
+      padding: 80px 0 90px;
+      position: relative;
+      overflow: hidden;
     }
 
     .hero-grid {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: 3rem;
+      gap: 4rem;
     }
 
     .hero-text {
@@ -116,46 +172,48 @@
     }
 
     .hero-badge {
-      background: #D9F0E8;
-      display: inline-block;
-      padding: 6px 16px;
-      border-radius: 40px;
-      font-size: 0.85rem;
+      background: var(--primary-light);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 18px;
+      border-radius: 60px;
+      font-size: 0.8rem;
       font-weight: 600;
-      color: #006B4C;
-      margin-bottom: 20px;
+      color: var(--primary);
+      margin-bottom: 24px;
     }
 
     .hero-text h1 {
-      font-size: 3.3rem;
+      font-size: 3.5rem;
       font-weight: 800;
-      line-height: 1.2;
-      color: #1A3A32;
+      line-height: 1.15;
+      color: var(--neutral-900);
       margin-bottom: 20px;
     }
 
     .hero-text p {
-      font-size: 1.2rem;
-      color: #3C5A5A;
-      max-width: 550px;
+      font-size: 1.1rem;
+      color: var(--neutral-700);
+      max-width: 520px;
       margin-bottom: 32px;
     }
 
     .btn-primary {
-      background: #006B4C;
+      background: var(--primary);
       border: none;
       padding: 14px 36px;
-      border-radius: 50px;
-      font-weight: 700;
-      font-size: 1rem;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 0.95rem;
       color: white;
       cursor: pointer;
-      transition: 0.2s;
-      box-shadow: 0 4px 8px rgba(0,107,76,0.2);
+      transition: all 0.2s;
+      box-shadow: 0 6px 14px rgba(44,110,158,0.25);
     }
 
     .btn-primary:hover {
-      background: #004d36;
+      background: var(--primary-dark);
       transform: translateY(-2px);
     }
 
@@ -164,32 +222,161 @@
       text-align: center;
     }
 
-    .hero-image img {
-      max-width: 100%;
-      border-radius: 32px;
-      box-shadow: 0 25px 40px -12px rgba(0,0,0,0.2);
+    .hero-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: var(--shadow-xl);
+      border: 1px solid var(--neutral-300);
     }
 
-    /* services section */
+    .hero-card i {
+      font-size: 3.5rem;
+      margin: 0 8px;
+      color: var(--primary);
+    }
+
+    /* Overview Section */
+    .overview {
+      padding: 80px 0 60px;
+      background: var(--neutral-100);
+    }
+
+    .overview-text-center {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 48px;
+      padding: 0 20px;
+    }
+
+    .overview-text-center h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: var(--neutral-900);
+    }
+
+    /* Full width gallery */
+    .gallery-fullwidth {
+      width: 100%;
+      background: var(--neutral-900);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gallery-container {
+      position: relative;
+      width: 100%;
+      height: 500px;
+      overflow: hidden;
+    }
+
+    .gallery-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 0.8s ease-in-out;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    .gallery-slide.active {
+      opacity: 1;
+    }
+
+    .gallery-overlay {
+      background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+      width: 100%;
+      padding: 40px 32px 32px;
+      text-align: center;
+      color: white;
+    }
+
+    .gallery-overlay h3 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .gallery-nav-buttons {
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      z-index: 20;
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .gallery-nav-btn {
+      background: rgba(255,255,255,0.3);
+      backdrop-filter: blur(8px);
+      border: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 60px;
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .gallery-nav-btn:hover {
+      background: var(--primary);
+    }
+
+    .gallery-dots {
+      position: absolute;
+      bottom: 100px;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      z-index: 20;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.5);
+      cursor: pointer;
+    }
+
+    .dot.active {
+      width: 28px;
+      background: var(--accent);
+    }
+
+    /* Services Section */
     .services {
       padding: 80px 0;
-      background: #FFFFFF;
+      background: var(--neutral-200);
     }
 
     .section-title {
       text-align: center;
-      font-size: 2.3rem;
-      font-weight: 800;
-      color: #1E2A2F;
-      margin-bottom: 14px;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--neutral-900);
+      margin-bottom: 16px;
     }
 
     .section-sub {
       text-align: center;
-      color: #5E7A6E;
-      max-width: 680px;
-      margin: 0 auto 48px;
-      font-size: 1.1rem;
+      color: var(--neutral-600);
+      max-width: 640px;
+      margin: 0 auto 56px;
+      font-size: 1rem;
     }
 
     .services-grid {
@@ -199,209 +386,305 @@
     }
 
     .service-card {
-      background: #FEFCF7;
-      border-radius: 28px;
-      padding: 32px 24px;
-      transition: all 0.25s ease;
-      border: 1px solid #E9EFE9;
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.02);
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      transition: all 0.3s;
+      border: 1px solid var(--neutral-300);
+      box-shadow: var(--shadow-sm);
     }
 
     .service-card:hover {
       transform: translateY(-6px);
-      border-color: #CBE5DA;
-      box-shadow: 0 20px 30px -12px rgba(0, 107, 76, 0.12);
+      border-color: var(--primary-light);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .service-visual {
+      width: 100%;
+      height: 200px;
+      border-radius: var(--radius-md);
+      background-size: cover;
+      background-position: center;
+      margin-bottom: 20px;
     }
 
     .service-icon {
-      font-size: 2.5rem;
-      background: #E1F3EC;
-      width: 64px;
-      height: 64px;
+      width: 48px;
+      height: 48px;
+      background: var(--primary-light);
+      border-radius: 16px;
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 20px;
-      margin-bottom: 24px;
-      color: #006B4C;
+      margin-bottom: 20px;
+      color: var(--primary);
+      font-size: 1.5rem;
     }
 
     .service-card h3 {
-      font-size: 1.6rem;
+      font-size: 1.35rem;
       font-weight: 700;
-      margin-bottom: 16px;
-      color: #1C3B35;
+      margin-bottom: 12px;
+      color: var(--neutral-900);
     }
 
     .service-card p {
-      color: #3F5A56;
+      color: var(--neutral-700);
       line-height: 1.5;
       margin-bottom: 20px;
+      font-size: 0.9rem;
     }
 
     .service-tag {
-      font-size: 0.85rem;
-      background: #F0F5F2;
+      font-size: 0.75rem;
+      background: var(--neutral-200);
       display: inline-block;
       padding: 5px 14px;
-      border-radius: 30px;
+      border-radius: 40px;
       font-weight: 500;
-      color: #006B4C;
+      color: var(--secondary);
     }
 
-    /* feature / about australia */
-    .australia-commit {
-      background: #F5F9F6;
-      padding: 70px 0;
+    /* Perth Section */
+    .perth-section {
+      padding: 80px 0;
+      background: var(--neutral-100);
     }
 
-    .flex-feature {
+    .feature-grid {
       display: flex;
       flex-wrap: wrap;
-      gap: 48px;
+      gap: 56px;
       align-items: center;
-    }
-
-    .feature-text {
-      flex: 1;
     }
 
     .feature-text h2 {
-      font-size: 2rem;
+      font-size: 1.9rem;
       font-weight: 700;
       margin-bottom: 20px;
-      color: #1C3B35;
+      color: var(--neutral-900);
     }
 
-    .feature-text ul {
+    .feature-list {
       list-style: none;
-      margin-top: 24px;
+      margin-top: 28px;
     }
 
-    .feature-text li {
-      margin-bottom: 14px;
+    .feature-list li {
+      margin-bottom: 16px;
       display: flex;
       align-items: center;
       gap: 12px;
-      font-size: 1rem;
-      color: #2C524A;
+      color: var(--neutral-700);
     }
 
-    .feature-text li i {
-      color: #006B4C;
-      font-size: 1.2rem;
+    .feature-list li i {
+      color: var(--secondary);
+      font-size: 1.1rem;
       width: 24px;
     }
 
-    .feature-img {
-      flex: 1;
-      background: #D9E8E2;
-      border-radius: 32px;
-      padding: 20px;
+    .feature-visual {
+      background: linear-gradient(145deg, var(--neutral-200), var(--neutral-100));
+      border-radius: var(--radius-lg);
+      padding: 40px;
       text-align: center;
+      border: 1px solid var(--neutral-300);
     }
 
-    .feature-img i {
-      font-size: 8rem;
-      color: #006B4C;
-      opacity: 0.8;
-    }
-
-    /* contact / cta */
-    .cta {
-      background: linear-gradient(120deg, #004d36, #006B4C);
-      padding: 60px 0;
-      text-align: center;
+    /* Stats */
+    .stats-section {
+      background: var(--primary-dark);
+      padding: 56px 0;
       color: white;
     }
 
-    .cta h2 {
+    .stats-grid {
+      display: flex;
+      justify-content: center;
+      gap: 64px;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+
+    .stats-grid i {
       font-size: 2.2rem;
-      margin-bottom: 16px;
+      color: var(--accent);
+      margin-bottom: 12px;
     }
 
-    .cta p {
-      font-size: 1.1rem;
-      max-width: 600px;
-      margin: 0 auto 28px;
-      opacity: 0.9;
-    }
-
-    .btn-white {
-      background: white;
-      border: none;
-      padding: 14px 38px;
-      border-radius: 50px;
+    .stats-grid strong {
+      font-size: 1.8rem;
+      display: block;
       font-weight: 700;
+    }
+
+    /* CTA Section with Email & WhatsApp Buttons */
+    .cta-section {
+      background: linear-gradient(115deg, var(--secondary), var(--secondary-dark));
+      padding: 64px 0;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: white;
+    }
+
+    .cta-section p {
+      max-width: 560px;
+      margin: 0 auto 28px;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .btn-email {
+      background: var(--email-bg);
+      color: white;
+      border: none;
+      padding: 14px 32px;
+      border-radius: 60px;
+      font-weight: 600;
       font-size: 1rem;
-      color: #006B4C;
       cursor: pointer;
-      transition: 0.2s;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
     }
 
-    .btn-white:hover {
-      background: #F0F7F3;
-      transform: scale(1.02);
+    .btn-email:hover {
+      background: #1E5A82;
+      transform: translateY(-2px);
     }
 
-    /* footer */
+    .btn-whatsapp {
+      background: var(--whatsapp);
+      color: white;
+      border: none;
+      padding: 14px 32px;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .btn-whatsapp:hover {
+      background: var(--whatsapp-dark);
+      transform: translateY(-2px);
+    }
+
+    /* WhatsApp Floating Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: var(--whatsapp);
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      cursor: pointer;
+      transition: all 0.3s;
+      z-index: 1000;
+      text-decoration: none;
+    }
+
+    .whatsapp-float:hover {
+      background-color: var(--whatsapp-dark);
+      transform: scale(1.05);
+    }
+
+    /* Footer */
     footer {
-      background: #0F2C26;
-      color: #CDE5DE;
-      padding: 48px 0 24px;
+      background: var(--neutral-900);
+      color: #94A3B8;
+      padding: 56px 0 32px;
     }
 
     .footer-grid {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      gap: 30px;
-      margin-bottom: 40px;
+      gap: 40px;
+      margin-bottom: 48px;
     }
 
     .footer-col h4 {
       color: white;
       margin-bottom: 18px;
       font-weight: 600;
+      font-size: 1rem;
     }
 
     .footer-col p, .footer-col a {
-      color: #BDD9D2;
+      color: #94A3B8;
       text-decoration: none;
       line-height: 1.6;
-    }
-
-    .footer-col a:hover {
-      color: white;
-    }
-
-    .copyright {
-      border-top: 1px solid #2D554B;
-      padding-top: 24px;
-      text-align: center;
       font-size: 0.85rem;
     }
 
-    /* modal (contact popup simple) */
+    .footer-col a:hover { color: var(--accent); }
+
+    .acknowledge {
+      background: #1E293B;
+      border-radius: var(--radius-md);
+      padding: 20px;
+      margin-top: 24px;
+      font-size: 0.8rem;
+      border-left: 3px solid var(--accent);
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 32px;
+      font-size: 0.75rem;
+      border-top: 1px solid #334155;
+      margin-top: 32px;
+    }
+
+    /* Modal */
     .modal {
       display: none;
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(0,0,0,0.6);
+      background: rgba(0,0,0,0.7);
       align-items: center;
       justify-content: center;
-      z-index: 1000;
+      z-index: 1100;
+      backdrop-filter: blur(4px);
     }
 
     .modal-content {
       background: white;
-      max-width: 460px;
+      max-width: 500px;
       width: 90%;
-      border-radius: 32px;
-      padding: 32px;
+      border-radius: var(--radius-lg);
+      padding: 36px;
       position: relative;
-      animation: fadeInUp 0.2s ease;
+      animation: fadeInUp 0.25s ease;
     }
 
     @keyframes fadeInUp {
@@ -409,315 +692,417 @@
       to { transform: translateY(0); opacity: 1; }
     }
 
-    .modal-content h3 {
+    .close-modal {
+      position: absolute;
+      right: 24px;
+      top: 20px;
       font-size: 1.8rem;
-      margin-bottom: 12px;
-      color: #1C3B35;
+      cursor: pointer;
+      color: #999;
     }
 
     .modal-content input, .modal-content textarea {
       width: 100%;
       padding: 12px 16px;
       margin: 12px 0;
-      border: 1px solid #D0DDD4;
-      border-radius: 28px;
+      border: 1px solid var(--neutral-300);
+      border-radius: 60px;
       font-family: inherit;
+      font-size: 0.9rem;
     }
 
-    .modal-content button {
-      background: #006B4C;
+    .modal-content textarea {
+      border-radius: 24px;
+    }
+
+    .dual-buttons {
+      display: flex;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .btn-submit-email {
+      background: var(--primary);
       color: white;
       border: none;
       padding: 12px;
-      width: 100%;
-      border-radius: 40px;
-      font-weight: bold;
-      margin-top: 8px;
+      flex: 1;
+      border-radius: 60px;
+      font-weight: 600;
       cursor: pointer;
+      transition: 0.2s;
     }
 
-    .close-modal {
-      position: absolute;
-      right: 22px;
-      top: 18px;
-      font-size: 1.8rem;
+    .btn-submit-wa {
+      background: var(--whatsapp);
+      color: white;
+      border: none;
+      padding: 12px;
+      flex: 1;
+      border-radius: 60px;
+      font-weight: 600;
       cursor: pointer;
-      color: #8FAAA2;
+      transition: 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
     }
+
+    .btn-submit-email:hover { background: var(--primary-dark); }
+    .btn-submit-wa:hover { background: var(--whatsapp-dark); }
 
     @media (max-width: 800px) {
-      .nav-flex {
-        flex-direction: column;
-        gap: 16px;
-      }
-      .hero-text h1 {
-        font-size: 2.4rem;
-      }
-      .section-title {
-        font-size: 1.9rem;
-      }
-      .container {
-        padding: 0 20px;
-      }
+      .container { padding: 0 20px; }
+      .hero-text h1 { font-size: 2.4rem; }
+      .nav-flex { flex-direction: column; align-items: flex-start; }
+      .nav-links { flex-wrap: wrap; gap: 1rem; }
+      .gallery-container { height: 350px; }
+      .whatsapp-float { width: 50px; height: 50px; font-size: 26px; bottom: 20px; right: 20px; }
+      .dual-buttons { flex-direction: column; }
+      .contact-buttons { flex-direction: column; align-items: center; }
+      .logo-icon { width: 50px; height: 50px; }
+      .logo-icon img { max-width: 50px; max-height: 50px; }
+      .logo-text h1 { font-size: 1.5rem; }
     }
   </style>
 </head>
 <body>
 
-  <nav class="navbar">
-    <div class="container nav-flex">
-      <div class="logo">
-        <h1>RoverCare <span>NDIS | Australia</span></h1>
+<nav class="navbar">
+  <div class="container nav-flex">
+    <div class="logo">
+      <div class="logo-icon">
+        <img src="https://raw.githubusercontent.com/Dawood166/RoverCare/952cf5a88d65c00ffe89293e909f9a57af56ae26/logo%201.svg" alt="RoverCare Logo" onerror="this.src='https://placehold.co/60x60/2C6E9E/white?text=RC'">
       </div>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#about-au">Why Us</a></li>
-        <li><a href="#contact" id="contactNavBtn">Contact</a></li>
-      </ul>
-      <button class="btn-outline" id="enquireBtn">Enquire now</button>
+      <div class="logo-text"><h1>RoverCare</h1><span>NDIS Registered | Perth WA</span></div>
     </div>
-  </nav>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="btn-outline" id="enquireBtn">Enquire now</button>
+  </div>
+</nav>
 
-  <!-- Hero / home section -->
+<main>
   <section id="home">
     <div class="hero">
       <div class="container hero-grid">
         <div class="hero-text">
-          <div class="hero-badge"><i class="fas fa-hands-helping"></i> Registered NDIS Provider</div>
-          <h1>Support that feels like home <br> — across Australia</h1>
-          <p>Reliable, compassionate assistance for household tasks, social support, life skills, community connection, and safe transport. Empowering your independence.</p>
-          <button class="btn-primary" id="heroCtaBtn">Get started today →</button>
+          <div class="hero-badge"><i class="fas fa-certificate"></i> NDIS Provider Perth WA</div>
+          <h1>Professional support that empowers your independence</h1>
+          <p>Compassionate, reliable disability support for community participation, life skills, transport, nursing, and domestic assistance. Based in Perth, serving Western Australia.</p>
+          <button class="btn-primary" id="heroCtaBtn">Book a free consultation →</button>
         </div>
         <div class="hero-image">
-          <div style="background: #DCF2EA; border-radius: 32px; padding: 20px;">
-            <i class="fas fa-hands-helping" style="font-size: 7rem; color:#006B4C;"></i>
-            <i class="fas fa-people-arrows" style="font-size: 5rem; margin:0 10px; color:#2B7A62;"></i>
-            <i class="fas fa-car-side" style="font-size: 5rem; color:#2B7A62;"></i>
-            <p style="margin-top: 20px; font-weight:500;">🇦🇺 Supporting participants in VIC, NSW, QLD, WA, SA & ACT</p>
+          <div class="hero-card">
+            <i class="fas fa-hands-helping"></i>
+            <i class="fas fa-users"></i>
+            <i class="fas fa-home"></i>
+            <p style="margin-top: 20px; font-weight: 500;">Person centred care across Perth & WA</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Services section (5 core services) with integrated detailed descriptions -->
+  <!-- Overview Section -->
+  <section class="overview">
+    <div class="overview-text-center">
+      <h2>Your journey to greater independence starts here</h2>
+      <p>At RoverCare, we believe everyone deserves to live a fulfilling life with dignity and choice. Our team of experienced support workers and nurses work alongside you to achieve your goals. We're locally owned and operated in Perth, delivering person centred NDIS support across Western Australia.</p>
+    </div>
+  </section>
+
+  <!-- Full Width Gallery -->
+  <div class="gallery-fullwidth">
+    <div class="gallery-container" id="galleryContainer"></div>
+    <div class="gallery-dots" id="galleryDots"></div>
+    <div class="gallery-nav-buttons">
+      <button class="gallery-nav-btn" id="prevSlideBtn"><i class="fas fa-chevron-left"></i></button>
+      <button class="gallery-nav-btn" id="nextSlideBtn"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </div>
+
+  <!-- Services Section -->
   <section id="services">
     <div class="services">
       <div class="container">
-        <div class="section-title">Our support services</div>
-        <div class="section-sub">Tailored, person-centred disability & lifestyle assistance — designed for real independence.</div>
-        <div class="services-grid">
-          <!-- 1 Household Tasks - detailed -->
-          <div class="service-card">
-            <div class="service-icon"><i class="fas fa-broom"></i></div>
-            <h3>Household Tasks</h3>
-            <p><strong>Providing reliable support with household chores, promoting a comfortable living environment.</strong> From cleaning, laundry, meal preparation to gardening and home organisation — we help keep your home running smoothly, safely, and hygienically so you can focus on what matters most.</p>
-            <span class="service-tag"><i class="fas fa-check-circle"></i> NDIS core support</span>
-          </div>
-          <!-- 2 Social Support - expanded -->
-          <div class="service-card">
-            <div class="service-icon"><i class="fas fa-heart"></i></div>
-            <h3>Social Support</h3>
-            <p><strong>Facilitating meaningful social connections and community engagement</strong> through guided interaction, recreational outings, and relationship-building activities. We enhance emotional wellbeing, reduce isolation, and promote a genuine sense of belonging — whether it's coffee catch-ups, attending appointments, or joining local groups.</p>
-            <span class="service-tag"><i class="fas fa-users"></i> Community participation</span>
-          </div>
-          <!-- 3 Development Life Skills - fully detailed -->
-          <div class="service-card">
-            <div class="service-icon"><i class="fas fa-chalkboard-user"></i></div>
-            <h3>Life Skills Development</h3>
-            <p><strong>Equipping individuals with essential life skills to thrive and achieve their full potential.</strong> We provide practical, hands-on training in budgeting, cooking, public transport navigation, communication, time management, and digital literacy — building confidence and independence for everyday success.</p>
-            <span class="service-tag"><i class="fas fa-lightbulb"></i> Capacity building</span>
-          </div>
-          <!-- 4 Innovative Community Participation - integrated detailed version -->
-          <div class="service-card">
-            <div class="service-icon"><i class="fas fa-palette"></i></div>
-            <h3>Innovative Community Participation</h3>
-            <p><strong>Engaging individuals in creative and meaningful community activities for a fulfilling lifestyle.</strong> From workshops, volunteer opportunities, cultural events, and recreational programs — we connect you with local art classes, nature excursions, sports groups, and community projects that align with your interests and goals.</p>
-            <span class="service-tag"><i class="fas fa-tree"></i> Social & recreation</span>
-          </div>
-          <!-- 5 Assist Travel / Transport - detailed full version -->
-          <div class="service-card">
-            <div class="service-icon"><i class="fas fa-van-shuttle"></i></div>
-            <h3>Travel & Transport Assistance</h3>
-            <p><strong>Delivering safe, timely, and reliable transportation services tailored to individual needs, including accompaniment and route planning.</strong> We empower participants to access healthcare, education, employment, social events, and other desired opportunities with dignity and ease — door-to-door support, vehicle modifications, and travel training available.</p>
-            <span class="service-tag"><i class="fas fa-road"></i> Transport & mobility</span>
-          </div>
-        </div>
+        <div class="section-title">Our NDIS support services</div>
+        <div class="section-sub">Tailored, evidence based support designed around your unique goals and lifestyle in Perth, WA.</div>
+        <div class="services-grid" id="servicesGrid"></div>
       </div>
     </div>
   </section>
 
-  <!-- Australia dedicated section + NDIS standards -->
-  <section id="about-au">
-    <div class="australia-commit">
-      <div class="container flex-feature">
+  <!-- About Perth Section -->
+  <section id="about">
+    <div class="perth-section">
+      <div class="container feature-grid">
         <div class="feature-text">
-          <h2><i class="fas fa-leaf"></i> NDIS registered & Australia-wide</h2>
-          <p>We are a proud Australian disability service provider aligned with the NDIS Practice Standards and Quality Framework. Our team brings local knowledge, cultural safety, and a genuine commitment to regional & metro communities — including our home base in Perth, Western Australia.</p>
-          <ul>
-            <li><i class="fas fa-check-circle"></i> Fully insured & police-checked support workers</li>
-            <li><i class="fas fa-clock"></i> Flexible scheduling — 24/7 availability across all states</li>
-            <li><i class="fas fa-hand-holding-heart"></i> Person-centred, choice & control approach</li>
-            <li><i class="fas fa-language"></i> Multilingual team & LGBTQIA+ friendly</li>
+          <h2>Proudly serving <span style="color: var(--secondary);">Perth, Western Australia</span></h2>
+          <p>We're deeply rooted in the local community. Our support coordinators and care teams live across Perth metro, understanding the unique needs of Western Australians.</p>
+          <ul class="feature-list">
+            <li><i class="fas fa-shield-alt"></i> Fully insured & NDIS screened professionals</li>
+            <li><i class="fas fa-calendar-check"></i> Flexible 24/7 scheduling across Perth & regional WA</li>
+            <li><i class="fas fa-heart"></i> Person centred planning with genuine choice</li>
+            <li><i class="fas fa-globe"></i> Local expertise, culturally respectful care</li>
           </ul>
         </div>
-        <div class="feature-img">
-          <i class="fas fa-map-marked-alt"></i>
-          <p style="margin-top: 24px; font-weight:600;">Proudly serving from Perth, WA — supporting participants across Australia.</p>
-          <div style="margin-top: 20px; font-size: 2rem;">
-            <i class="fas fa-wheelchair"></i> <i class="fas fa-hands"></i> <i class="fas fa-bus"></i>
-          </div>
+        <div class="feature-visual">
+          <i class="fas fa-map-marked-alt" style="font-size: 4rem; color: var(--secondary);"></i>
+          <p style="margin-top: 20px; font-weight: 500;">Supporting participants from Joondalup to Mandurah, and beyond</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- extra reference: trust and experience -->
-  <div style="background: #FFFFFF; padding: 40px 0; text-align: center; border-bottom: 1px solid #e2efe9;">
-    <div class="container">
-      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px;">
-        <div><i class="fas fa-star-of-life" style="color:#006B4C; font-size: 2rem;"></i><br><strong>5+ years</strong><br>excellence in care</div>
-        <div><i class="fas fa-smile" style="color:#006B4C; font-size: 2rem;"></i><br><strong>98%</strong><br>client satisfaction</div>
-        <div><i class="fas fa-austral-sign" style="color:#006B4C; font-size: 2rem;"></i><br><strong>NDIS</strong><br>registered provider</div>
-      </div>
+  <!-- Stats -->
+  <div class="stats-section">
+    <div class="container stats-grid">
+      <div><i class="fas fa-briefcase"></i><strong>5+ Years</strong><span>Professional Experience Team</span></div>
+      <div><i class="fas fa-smile"></i><strong>98%</strong><span>Client Satisfaction</span></div>
+      <div><i class="fas fa-award"></i><strong>NDIS</strong><span>Registered Provider</span></div>
     </div>
   </div>
 
-  <!-- Call to action with new contact details -->
-  <div class="cta" id="contact">
+  <!-- CTA Contact Section with Email & WhatsApp Buttons -->
+  <div class="cta-section" id="contact">
     <div class="container">
-      <h2>Ready to start your support journey?</h2>
-      <p>Talk to our friendly local team about household assistance, life skills, transport, or community activities. Based in Perth, WA, we're here for you across Australia.</p>
-      <button class="btn-white" id="ctaModalBtn">Request a free consultation</button>
-    </div>
-  </div>
-
-  <!-- footer with updated address, phone, email -->
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <h4>RoverCare Australia</h4>
-          <p>NDIS provider delivering holistic support across household tasks, social connection, life skills, community participation and transport. Creating opportunities for every Australian.</p>
-          <p style="margin-top: 12px;"><strong>Perth Office</strong><br>
-          24 Vimeira Way, Ellenbrook WA 6069<br>
-          Perth, Western Australia</p>
-        </div>
-        <div class="footer-col">
-          <h4>Contact</h4>
-          <p><i class="fas fa-phone-alt"></i> 61 491 955 093<br>
-          <i class="fas fa-envelope"></i> Admin@rovercare.com.au<br>
-          <i class="fas fa-location-dot"></i> 24 Vimeira Way, Ellenbrook WA 6069</p>
-        </div>
-        <div class="footer-col">
-          <h4>Resources</h4>
-          <p><a href="#">NDIS Support Catalogue</a><br><a href="#">Plan Management</a><br><a href="#">Privacy Policy</a></p>
-        </div>
-      </div>
-      <div class="copyright">
-        <p>© 2025 RoverCare Australia — Culturally inclusive, trusted disability services. We acknowledge the Traditional Owners of country throughout Australia, and pay our respect to Elders past and present. <strong>Perth, WA | 24 Vimeira Way, Ellenbrook WA 6069</strong></p>
+      <h2>Ready to begin your support journey?</h2>
+      <p>Connect with our friendly Perth based team today. We're here to answer your questions about NDIS support.</p>
+      <div class="contact-buttons">
+        <a href="mailto:Admin@rovercare.com.au?subject=NDIS%20Support%20Enquiry&body=Hello%20RoverCare%20Team%2C%0A%0AI'm%20interested%20in%20learning%20more%20about%20your%20NDIS%20support%20services%20in%20Perth." class="btn-email">
+          <i class="fas fa-envelope"></i> Email Us
+        </a>
+        <a href="https://wa.me/61491955093?text=Hello%20RoverCare%2C%20I'm%20interested%20in%20NDIS%20support%20services%20in%20Perth.%20Could%20you%20please%20provide%20more%20information%3F" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+          <i class="fab fa-whatsapp"></i> WhatsApp Us
+        </a>
       </div>
     </div>
-  </footer>
+  </div>
+</main>
 
-  <!-- Modal (contact form simulation) with updated contact info in context -->
-  <div id="contactModal" class="modal">
-    <div class="modal-content">
-      <span class="close-modal">&times;</span>
-      <h3>Get in touch</h3>
-      <p>We'll respond within 24hrs (AWST) — based in Perth, WA.</p>
-      <input type="text" placeholder="Full name" id="modalName">
-      <input type="email" placeholder="Email address" id="modalEmail">
-      <input type="tel" placeholder="Phone (optional)">
-      <textarea rows="2" placeholder="Which service interests you? (Household / Social Support / Life Skills / Community Participation / Travel Assistance)"></textarea>
-      <button id="submitModalBtn">Send enquiry →</button>
-      <small style="display:block; margin-top:12px;">We respect your privacy. NDIS info handled with care. You can also call us at 61 491 955 093 or email Admin@rovercare.com.au</small>
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>RoverCare Australia</h4>
+        <p>NDIS registered provider delivering holistic disability support across Perth and Western Australia.</p>
+        <p style="margin-top: 12px;"><strong>Perth, WA</strong><br>Serving metro and regional communities</p>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p><i class="fas fa-phone-alt"></i> 61 491 955 093<br>
+        <i class="fas fa-envelope"></i> Admin@rovercare.com.au</p>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <p><a href="#">NDIS Support Catalogue</a><br><a href="#">Privacy Policy</a></p>
+      </div>
+    </div>
+    <div class="acknowledge">
+      <i class="fas fa-leaf" style="color: var(--accent); margin-right: 10px;"></i> Acknowledgement of Country: RoverCare Australia respectfully acknowledges the Traditional Owners of the land across Western Australia, including the Whadjuk Noongar people of the Perth region. We pay our respects to Elders past, present, and emerging.
+    </div>
+    <div class="copyright">
+      <p>© 2025 RoverCare Australia — Empowering independence with NDIS support in Perth, WA.</p>
     </div>
   </div>
+</footer>
 
-  <script>
-    // MODAL functionality
-    const modal = document.getElementById('contactModal');
-    const openModalBtns = [document.getElementById('enquireBtn'), document.getElementById('heroCtaBtn'), document.getElementById('ctaModalBtn'), document.getElementById('contactNavBtn')];
-    const closeModalSpan = document.querySelector('.close-modal');
-    
-    function openModal() {
-      modal.style.display = 'flex';
-    }
-    function closeModal() {
-      modal.style.display = 'none';
-    }
-    
-    openModalBtns.forEach(btn => {
-      if(btn) btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        openModal();
-      });
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/61491955093?text=Hello%20RoverCare%2C%20I'm%20interested%20in%20NDIS%20support%20services%20in%20Perth." class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- Modal -->
+<div id="contactModal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <h3 style="font-size: 1.6rem; margin-bottom: 8px;">Get in touch</h3>
+    <p style="margin-bottom: 20px;">Our Perth team will respond within 24 hours.</p>
+    <input type="text" id="modalName" placeholder="Full name">
+    <input type="email" id="modalEmail" placeholder="Email address">
+    <input type="tel" id="modalPhone" placeholder="Phone number">
+    <textarea id="modalMessage" rows="3" placeholder="Tell us about your support needs..."></textarea>
+    <div class="dual-buttons">
+      <button class="btn-submit-email" id="submitEmailBtn"><i class="fas fa-envelope"></i> Send by Email</button>
+      <button class="btn-submit-wa" id="submitWhatsAppBtn"><i class="fab fa-whatsapp"></i> Send via WhatsApp</button>
+    </div>
+    <small style="display: block; margin-top: 16px; text-align: center;">Or call us directly: 61 491 955 093</small>
+  </div>
+</div>
+
+<script>
+  // Gallery Data
+  const gallerySlides = [
+    { image: "https://images.pexels.com/photos/6646860/pexels-photo-6646860.jpeg?auto=compress&cs=tinysrgb&w=1200", title: "Community Connection", desc: "Building meaningful relationships and social inclusion" },
+    { image: "https://images.pexels.com/photos/6646957/pexels-photo-6646957.jpeg?auto=compress&cs=tinysrgb&w=1200", title: "Life Skills Development", desc: "Practical training for everyday independence" },
+    { image: "https://images.pexels.com/photos/1271619/pexels-photo-1271619.jpeg?auto=compress&cs=tinysrgb&w=1200", title: "Safe Transport", desc: "Reliable travel assistance across Perth" },
+    { image: "https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg?auto=compress&cs=tinysrgb&w=1200", title: "Professional Nursing", desc: "Clinical care with compassion" },
+    { image: "https://images.pexels.com/photos/7305646/pexels-photo-7305646.jpeg?auto=compress&cs=tinysrgb&w=1200", title: "Domestic Assistance", desc: "A clean, comfortable home environment" }
+  ];
+
+  let currentSlide = 0;
+  const galleryContainer = document.getElementById('galleryContainer');
+  const dotsContainer = document.getElementById('galleryDots');
+
+  function renderGallery() {
+    galleryContainer.innerHTML = '';
+    dotsContainer.innerHTML = '';
+    gallerySlides.forEach((slide, idx) => {
+      const slideDiv = document.createElement('div');
+      slideDiv.className = `gallery-slide ${idx === currentSlide ? 'active' : ''}`;
+      slideDiv.style.backgroundImage = `url('${slide.image}')`;
+      slideDiv.innerHTML = `<div class="gallery-overlay"><h3>${slide.title}</h3><p>${slide.desc}</p></div>`;
+      galleryContainer.appendChild(slideDiv);
+      const dot = document.createElement('div');
+      dot.className = `dot ${idx === currentSlide ? 'active' : ''}`;
+      dot.addEventListener('click', () => goToSlide(idx));
+      dotsContainer.appendChild(dot);
     });
-    
-    if(closeModalSpan) closeModalSpan.addEventListener('click', closeModal);
-    window.addEventListener('click', (e) => {
-      if(e.target === modal) closeModal();
+  }
+
+  function goToSlide(index) {
+    currentSlide = index;
+    const slides = document.querySelectorAll('.gallery-slide');
+    const dots = document.querySelectorAll('.dot');
+    slides.forEach((slide, i) => slide.classList.toggle('active', i === currentSlide));
+    dots.forEach((dot, i) => dot.classList.toggle('active', i === currentSlide));
+  }
+
+  function nextSlide() { currentSlide = (currentSlide + 1) % gallerySlides.length; goToSlide(currentSlide); }
+  function prevSlide() { currentSlide = (currentSlide - 1 + gallerySlides.length) % gallerySlides.length; goToSlide(currentSlide); }
+
+  renderGallery();
+  document.getElementById('prevSlideBtn')?.addEventListener('click', prevSlide);
+  document.getElementById('nextSlideBtn')?.addEventListener('click', nextSlide);
+  setInterval(nextSlide, 6000);
+
+  // Services Data with working images
+  const servicesList = [
+    { title: "Community Participation & Social Support", desc: "Building meaningful connections and community engagement. We help you access local events, hobbies, and group activities across Perth, reducing isolation.", tag: "Social & community", icon: "fa-users", images: [
+      "https://images.pexels.com/photos/6646860/pexels-photo-6646860.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/6646873/pexels-photo-6646873.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/6646946/pexels-photo-6646946.jpeg?auto=compress&cs=tinysrgb&w=600"
+    ] },
+    { title: "Life Skills Development", desc: "Practical training for daily living: cooking, budgeting, public transport, communication and digital skills. Hands on learning to build confidence.", tag: "Capacity building", icon: "fa-chalkboard-user", images: [
+      "https://images.pexels.com/photos/6646957/pexels-photo-6646957.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/6646883/pexels-photo-6646883.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/6646919/pexels-photo-6646919.jpeg?auto=compress&cs=tinysrgb&w=600"
+    ] },
+    { title: "Travel & Transport Assistance", desc: "Safe, reliable transport across Perth and regional WA. Door to door support for medical appointments, work, study or social events.", tag: "Transport & mobility", icon: "fa-van-shuttle", images: [
+      "https://images.pexels.com/photos/1271619/pexels-photo-1271619.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/1024967/pexels-photo-1024967.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/164634/pexels-photo-164634.jpeg?auto=compress&cs=tinysrgb&w=600"
+    ] },
+    { title: "Nursing Services", desc: "Clinical care delivered by qualified nurses. Medication management, wound care, complex health monitoring and continence assessments.", tag: "Specialist nursing", icon: "fa-stethoscope", images: [
+      "https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/5214996/pexels-photo-5214996.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/4427659/pexels-photo-4427659.jpeg?auto=compress&cs=tinysrgb&w=600"
+    ] },
+    { title: "Domestic Assistance (Household Tasks)", desc: "A clean, organised home for your wellbeing. Support with cleaning, laundry, meal preparation, gardening and home maintenance.", tag: "Core daily support", icon: "fa-broom", images: [
+      "https://images.pexels.com/photos/5699456/pexels-photo-5699456.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/4107288/pexels-photo-4107288.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/6646959/pexels-photo-6646959.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/7305646/pexels-photo-7305646.jpeg?auto=compress&cs=tinysrgb&w=600"
+    ] }
+  ];
+
+  function randImg(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+  
+  function renderServices() {
+    const grid = document.getElementById('servicesGrid');
+    grid.innerHTML = '';
+    servicesList.forEach(s => {
+      const card = document.createElement('div');
+      card.className = 'service-card';
+      const imgUrl = randImg(s.images);
+      card.innerHTML = `
+        <div class="service-visual" style="background-image: url('${imgUrl}'); background-size: cover; background-position: center;"></div>
+        <div class="service-icon"><i class="fas ${s.icon}"></i></div>
+        <h3>${s.title}</h3>
+        <p>${s.desc}</p>
+        <span class="service-tag"><i class="fas fa-check-circle"></i> ${s.tag}</span>
+      `;
+      grid.appendChild(card);
+      const visual = card.querySelector('.service-visual');
+      setInterval(() => { 
+        if(visual) visual.style.backgroundImage = `url('${randImg(s.images)}')`; 
+      }, 7000);
     });
-    
-    // Submit modal with updated service wording and contact reference
-    const submitBtn = document.getElementById('submitModalBtn');
-    if(submitBtn) {
-      submitBtn.addEventListener('click', () => {
-        const nameInput = document.getElementById('modalName');
-        const emailInput = document.getElementById('modalEmail');
-        if(nameInput.value.trim() === '' || emailInput.value.trim() === '') {
-          alert('Please provide your name and email so we can assist you with NDIS services.');
-        } else {
-          alert(`Thank you ${nameInput.value.trim()}! One of our support coordinators from RoverCare Australia (Perth office) will reach out soon regarding Household Tasks, Social Support, Life Skills Development, Innovative Community Participation or Travel Assistance. You can also call us at 61 491 955 093 or email Admin@rovercare.com.au.`);
-          closeModal();
-          nameInput.value = '';
-          emailInput.value = '';
-        }
-      });
-    }
-    
-    // smooth scroll for navigation links
-    document.querySelectorAll('.nav-links a, .btn-outline, .btn-primary, .btn-white').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        const href = this.getAttribute('href');
-        if(href && href.startsWith('#')) {
-          e.preventDefault();
-          const targetId = href.substring(1);
-          const targetElement = document.getElementById(targetId);
-          if(targetElement) {
-            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          } else if (targetId === 'contact' && document.getElementById('contact')) {
-            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-          }
-        }
-      });
+  }
+  renderServices();
+
+  // Modal Logic
+  const modal = document.getElementById('contactModal');
+  const openBtns = ['enquireBtn', 'heroCtaBtn', 'ctaModalBtn'].map(id => document.getElementById(id));
+  const closeSpan = document.querySelector('.close-modal');
+  function openModal() { modal.style.display = 'flex'; }
+  function closeModal() { modal.style.display = 'none'; }
+  openBtns.forEach(btn => btn?.addEventListener('click', (e) => { e.preventDefault(); openModal(); }));
+  closeSpan?.addEventListener('click', closeModal);
+  window.addEventListener('click', (e) => { if(e.target === modal) closeModal(); });
+
+  function getFormData() {
+    return {
+      name: document.getElementById('modalName')?.value.trim() || '',
+      email: document.getElementById('modalEmail')?.value.trim() || '',
+      phone: document.getElementById('modalPhone')?.value.trim() || '',
+      message: document.getElementById('modalMessage')?.value.trim() || ''
+    };
+  }
+
+  function validateForm(data) {
+    if (!data.name) { alert('Please enter your full name.'); return false; }
+    if (!data.email && !data.phone) { alert('Please provide either an email or phone number.'); return false; }
+    return true;
+  }
+
+  document.getElementById('submitEmailBtn')?.addEventListener('click', () => {
+    const data = getFormData();
+    if (!validateForm(data)) return;
+    const subject = `NDIS Enquiry from ${data.name}`;
+    const body = `Name: ${data.name}\nEmail: ${data.email}\nPhone: ${data.phone}\n\nMessage:\n${data.message || 'No message provided.'}`;
+    window.location.href = `mailto:Admin@rovercare.com.au?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    alert(`Thank you ${data.name}! An email draft has been opened. Please send it to complete your enquiry.`);
+    closeModal();
+    document.getElementById('modalName').value = '';
+    document.getElementById('modalEmail').value = '';
+    document.getElementById('modalPhone').value = '';
+    document.getElementById('modalMessage').value = '';
+  });
+
+  document.getElementById('submitWhatsAppBtn')?.addEventListener('click', () => {
+    const data = getFormData();
+    if (!validateForm(data)) return;
+    const phoneNumber = '61491955093';
+    let waMessage = `*NDIS Enquiry from RoverCare Website*\n\n`;
+    waMessage += `*Name:* ${data.name}\n`;
+    waMessage += `*Email:* ${data.email || 'Not provided'}\n`;
+    waMessage += `*Phone:* ${data.phone || 'Not provided'}\n\n`;
+    waMessage += `*Message:*\n${data.message || 'No message provided.'}`;
+    window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(waMessage)}`, '_blank');
+    alert(`Thank you ${data.name}! WhatsApp will open. Send the message to reach our team.`);
+    closeModal();
+    document.getElementById('modalName').value = '';
+    document.getElementById('modalEmail').value = '';
+    document.getElementById('modalPhone').value = '';
+    document.getElementById('modalMessage').value = '';
+  });
+
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        e.preventDefault();
+        document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+      }
     });
-    
-    // specific for enquire & contactNavBtn
-    const extraEnquire = document.getElementById('enquireBtn');
-    if(extraEnquire) {
-      extraEnquire.addEventListener('click', (e) => {
-        e.preventDefault();
-        openModal();
-      });
-    }
-    const navContact = document.getElementById('contactNavBtn');
-    if(navContact) {
-      navContact.addEventListener('click', (e) => {
-        e.preventDefault();
-        const contactSection = document.getElementById('contact');
-        if(contactSection) contactSection.scrollIntoView({ behavior: 'smooth' });
-        else openModal();
-      });
-    }
-    const heroBtn = document.getElementById('heroCtaBtn');
-    if(heroBtn) heroBtn.addEventListener('click', (e) => { e.preventDefault(); openModal(); });
-    const ctaBtn = document.getElementById('ctaModalBtn');
-    if(ctaBtn) ctaBtn.addEventListener('click', (e) => { e.preventDefault(); openModal(); });
-    
-    console.log("RoverCare AU — NDIS services ready | Contact: 24 Vimeira Way, Ellenbrook WA 6069 | 61 491 955 093 | Admin@rovercare.com.au");
-  </script>
+  });
+</script>
 </body>
 </html>
